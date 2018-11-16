@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.index-nav{
+    height: 80px;
+}
+.navbar-nav li a{
+    padding-right: 25px;
+}
+.lunbo{
+    float: left;
+}
+
+.lunbo{
+    float: left;
+}
+@media (min-width: 768px){
+    .navbar-nav > li > a {
+        padding-top: 25px;
+        padding-left: 25px;
+    }
+}
+.index-ul .line-bot{
+    border-bottom: 1px solid red;
+    width: 16px;
+    margin: 0 auto;
+    margin-top: -12px;
+}
+@media (max-width: 768px){
+    .index-nav{
+        height: 50px;
+    }
+    .navbar-toggle {
+        margin-top: 8px;
+        margin-right: 40px;
+    }
+    .navbar-brand{
+        padding: 0 15px;
+    }
+    .nav .line-bot{
+        display: none;
+    }
+    .index-ul{
+        float: left;
+    }
+    .lunbo{
+        padding-top: 0px;
+    }
+}
+
+
+.container .main-title p{
+    border-bottom: 2px solid red;
+    width: 60px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.index-sect .container{
+    clear: both;
+    border: 1px solid #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+.index-sect .container div h2{
+    font-size: 60px;
+    line-height: 1.5em;
+    color: #0ba1e4;
+}
+.index-sect1{
+    overflow: hidden;
+    margin-top: 50px;
+    background: #e1e1e1;
+    margin-bottom: 50px;
+}
+
+.index-sect1 .container{
+    text-align: center;
+    margin-top: 50px;
+}
+.index-sect1-mid{
+    background: #fff;
+    margin-bottom: 50px;
+}
+.index-sect1-mid>div{
+    border: 1px solid #e1e1e1;
+}
+.index-sect1-mid .advan-item span{
+    color: #0ba1e4;
+    font-size: 80px;
+    line-height: 1.5em;
+}
+.service{
+    overflow: hidden;
+    text-align: center;
+}
+.service-item{
+    border: 1px solid #e1e1e1;
+}
+.service-item-top{
+    border-bottom: 1px solid #e1e1e1;
+    padding: 20px;
+}
+.service-item-bottom p{
+    padding: 20px;
+}
+.service-item-bottom button{
+    margin-bottom:30px;
+}
+
+
+
+.index-sect2 {
+    text-align: center;
+    margin-top: 100px;
+}
