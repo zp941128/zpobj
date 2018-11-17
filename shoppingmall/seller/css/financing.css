@@ -1,0 +1,28 @@
+.self-middle-right-main{
+    width: 800px;
+    background: rgb(228, 223, 223);
+
+}
+
+.financ-top{
+    padding: 20px;    
+    border: 20px solid #fff;
+}
+.financ-main{
+    padding: 20px;    
+    border: 20px solid #fff;
+}
+.financ-top p span:last-child,.financ-main p span:last-child{
+    color: rgb(20, 170, 216);
+}
+#thitcash{
+    display: inline-block;
+    color: #fff;
+    width: 60px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(20, 170, 216);
+    margin-left: 40px;
+}

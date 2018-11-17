@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/prod.css">
+</head>
+<body>
+<header class="index-head">
+    <div class="index-head-main">
+        <div class="index-head-left">
+            <ul>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">我的商品</a></li>
+            </ul>
+        </div>
+        <div class="index-head-right">
+            <ul>
+                <li>用户:</li>
+                <li><a href="#">你好,登录</a></li>
+                <li><a href="">用户注册</a></li>
+                <li><a href="">卖家个人中心</a></li>
+                <li><a href="">买家个人中心</a></li>
+                <li><a href="">我的订单</a></li>
+                <li><a href="">购物车(2)</a></li>
+                <li><a href="">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<nav >
+    <div class="index-nav-main">
+        <div class="index-nav-logo">
+            <h1>中小微企业云服务平台</h1>
+        </div>
+        <div class="index-nav-right">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用超市</a></li>
+                <li><a href="">云资源服务</a></li>
+                <li><a href="">电子商务服务</a></li>
+                <li><a href="">政企服务</a></li>
+                <li><a href="">解决方案</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+<!--<div class="secpro">-->
+    <!--<h2>电子产品</h2>-->
+
+    <!--<div class="pro-sect-left">-->
+        <!--<img src="img/1489726707628.png" alt="">-->
+        <!--<p> 台湾小伙伴说大陆的50岚是假的,一点点就是台湾的50岚。跟露珠说的一样 回应 ...魔都的一点点好喝,五十岚一泡污 回应 赞 删除 来自豆瓣App uk代购l</p>-->
+    <!--</div>-->
+    <!--<div class="pro-sect-right">-->
+        <!--<ul class="secpro-ul">-->
+            <!--<li>-->
+                <!--<img src="img/1489559173709.jpg" alt="11">-->
+                <!--<span>小米手机</span>-->
+            <!--</li>-->
+
+        <!--</ul>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+
+</section>
+
+<footer>
+    <div class="foot-main">
+
+        <div class="foot-main-top">
+            <ul>
+                <li><h3>关于我们</h3></li>
+                <li><a>官方微博</a></li>
+                <li><a>官方微信</a></li>
+                <li><a>平台介绍</a></li>
+            </ul>
+            <ul>
+                <li><h3>支付方式</h3></li>
+                <li><a>微信支付</a></li>
+                <li><a>支付宝</a></li>
+                <li><a>翼支付</a></li>
+            </ul>
+            <ul>
+                <li><h3>商务合作</h3></li>
+                <li><a>合作机会</a></li>
+
+            </ul>
+            <ul>
+                <li><h3>服务与支持</h3></li>
+                <li><a>使用帮助</a></li>
+                <li><a>故障申报</a></li>
+
+            </ul>
+            <ul>
+                <li><h3>友情链接</h3></li>
+                <li><a>阿里云服务</a></li>
+                <li><a>天翼云</a></li>
+                <li><a>客服官网</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bottom">
+        <div>
+            <p>版权所有归：</p>
+            <p>为信息产业科技公司</p>
+            <p>技术支持</p>
+            <p>微科技有限公司</p>
+
+        </div>
+    </div>
+
+</footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/product.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.js" ></script>
+    <script type="text/x-jquery-tmpl" id = "t1">
+            <div class = "secpro">
+                <h2>${title}</h2>
+                <div class="pro-sect-left">
+                   <img src="${titleImg}">
+                   <p>${titleText}</p>
+                </div>
+                 <div class="pro-sect-right">
+                    <ul class="secpro-ul">
+                        {{each(i,e) pro}}
+                            <li>
+                                <img src = "img/1489559173709.jpg">
+                                <span>${name}</span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+	</script>
+<script>
+    var product=product;
+    $("#t1").tmpl(product).appendTo("section")
+</script>
+</body>
+</html>

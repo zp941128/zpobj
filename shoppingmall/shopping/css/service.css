@@ -1,0 +1,45 @@
+section{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.ser-top img{
+    width: 1200px;
+    margin-bottom: 30px;
+}
+.ser-sect-left{
+    float: left;
+    margin: 20px 60px;
+}
+.ser-sect-right{
+    float: left;
+    border-top: 2px solid #3899f6;
+    width: 300px;
+    height: 400px;
+}
+.ser-sect-right h2{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+.ser-sect-right .notice{
+    margin-top: 20px;
+}
+.ser-sect-right .notice p{
+    margin: 10px 5px;
+}
+.ser-sect-right .notice p:nth-of-type(2){
+    display: inline-block;
+    font-size: 14px;
+    color: #cccccc;
+}
+.ser-sect-right .notice span{
+    margin-left: 130px;
+
+}
+.ser-sect-right .notice span a{
+    color: #3899f6;
+}
+.ser-sect-right .notice p:nth-of-type(1) a{
+    color: #000000;
+    font-size: 15px;
+}

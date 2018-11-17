@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/selfindex.css">
+    <link rel="stylesheet" href="../shopping/css/index.css">
+    <link rel="stylesheet" href="css/indent.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="self-head-left">
+                <span>用户:马云</span>
+            </div>
+            <div class="self-head-right">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <h1>中小微企业商城</h1>
+            <span>|</span>
+            <span>个人中心</span>
+        </div>
+    </nav>
+    <section>
+        <div class="self-sect-main">
+            <div class="self-sect-left">
+                <div class="self-sect-left-top">
+                    <h2><img src="img_seller/mayun.png" alt=""></h2>
+                    <img src="img_seller/shutiao.png" alt="">
+                    <span>合作伙伴</span>
+                </div>
+                <div class="self-sect-left-main">
+                    <ul>
+                        <li><i></i><a href="">个人中心</a></li>
+                        <li><i></i><a href="">商品管理</a></li>
+                        <li><i></i><a href="">发布商品</a></li>
+                        <li><i></i><a href="">订单中心</a></li>
+                        <li><i></i><a href="">资金管理</a></li>
+                        <li><i></i><a href="">交易纪录</a></li>
+                        <li><i></i><a href="">信息管理</a></li>
+                        <li><i></i><a href="">账号管理</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="goods-sect-right">
+                <div class="goods-sect-top">
+                    
+                    <div class="goods-sect-search">
+                        <p>
+                            <span>商品名称:</span>
+                            <input type="text">
+                            <span>成交时间:</span>
+                            <input type="text" placeholder="开始时间">
+                            <span>成交时间:</span>
+                            <input type="text" placeholder="结束时间">
+                        </p>
+                        <p>
+                            <span>买家昵称:</span>
+                            <input type="text">
+                            <span>买家单号:</span>
+                            <input type="text">
+
+                            <span>商家单号:</span>
+                            <input type="text">
+                           
+                        </p>
+                        <p>
+                            <button>搜索订单</button>
+                            <button>导出/下载历史订单</button>
+                        </p>
+                    </div>
+                    <div class="goods-sect-name">
+                            <ul>
+                                <li>近三个月订单()</li>
+                                <li>|</li>
+                                <li>等待买家付款()</li>
+                                <li>|</li>
+                                <li>等待发货()</li>
+                                <li>|</li>
+                                <li>已完成订单()</li>
+                                <li>|</li>
+                                <li>三个月前订单()</li>
+                                
+                            </ul>
+                        </div>
+                </div>
+                <div class="goods-sect-main">
+                    <div class="goods-table-section">
+                        <form action="">
+                            <table border="1">
+                            <thead>
+                                <th >商品</th>
+                                <th>销售属性</th>
+                                <th>价格</th>
+                                <th>买家</th>
+                                <th>详情</th>
+                               
+                            </thead>
+                          
+                            </table>
+                        </form>
+                    </div>
+                    <div class="goods-table-fooler">
+                        <ul>
+                            <li>最前</li>
+                            <li>前一页</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>下一页</li>
+                            <li>最后</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+            <div class="foot-bottom">
+                    <div>
+                        <p>版权所有归：</p>
+                        <p>为信息产业科技公司</p>
+                        <p>技术支持</p>
+                        <p>微科技有限公司</p>
+        
+                    </div>
+                </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.tmpl.js"></script>
+    <script type="text/x-jquery-tmpl" id = "t1">
+        <tbody>
+                <tr>
+                    <td colspan="5">买家单号:${worksheet}   商家单号:${merchant}  买家电话:${buyerphone}</td>
+                </tr>
+                {{each(i,e) commodity}}
+                <tr>
+                        <td width=400>
+                            <img src="${src}" alt="">
+                            <p>${commname}</p>
+                            <p>${type}</p>
+                            
+                        </td>
+                        <td>
+                            ¥${style}
+                        </td>
+                        <td>
+                            ${value}
+                        </td>
+                        {{if i==0}}
+                        <td rowspan="${commodity.length}">
+                            ${buyer}
+                        </td>
+                        <td rowspan="${commodity.length}"> 
+                            订单详情
+                        </td>
+                        {{/if}}
+                        
+                </tr>
+                {{/each}}
+                
+        </tbody>
+        
+    </script>
+    <script>
+        var indet=indet;
+        console.log(indet)
+        $("#t1").tmpl(indet).appendTo("table")
+
+    </script>
+</body>
+</html>

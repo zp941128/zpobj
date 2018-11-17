@@ -1,0 +1,44 @@
+.self-sect-right {
+    position: relative;
+}
+.self-sect-right>span{
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+
+.mycommod-sect-middle{
+    width: 930px;
+    height: 140px;
+    border: 1px solid #abcdef;
+    margin-top: 20px;
+   
+}
+.mycommod-sect-left img{
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    float: left;
+}
+.mycommod-sect-left p{
+    margin-top: 10px;
+    color: rgb(163, 158, 158);
+}
+.mycommod-sect-right span{
+    float:right;
+    margin: -20px;
+    margin-right: 60px;
+}
+.goods-table-fooler{
+    clear: both;
+    margin-top: 50px;
+}
+.goods-table-fooler ul{
+    width: 350px;
+    margin: 0 auto;
+}
+.goods-table-fooler ul li{
+    float: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+}

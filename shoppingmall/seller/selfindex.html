@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/selfindex.css">
+    <link rel="stylesheet" href="../shopping/css/index.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="self-head-left">
+                <span>用户:马云</span>
+            </div>
+            <div class="self-head-right">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <h1>中小微企业商城</h1>
+            <span>|</span>
+            <span>个人中心</span>
+        </div>
+    </nav>
+    <section>
+        <div class="self-sect-main">
+            <div class="self-sect-left">
+                <div class="self-sect-left-top">
+                    <h2><img src="img_seller/mayun.png" alt=""></h2>
+                    <img src="img_seller/shutiao.png" alt="">
+                    <span>合作伙伴</span>
+                </div>
+                <div class="self-sect-left-main">
+                    <ul>
+                        <li><i></i><a href="">个人中心</a></li>
+                        <li><i></i><a href="">商品管理</a></li>
+                        <li><i></i><a href="">发布商品</a></li>
+                        <li><i></i><a href="">订单中心</a></li>
+                        <li><i></i><a href="">资金管理</a></li>
+                        <li><i></i><a href="">交易纪录</a></li>
+                        <li><i></i><a href="">信息管理</a></li>
+                        <li><i></i><a href="">账号管理</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="self-sect-right">
+                <div class="self-sect-right-top">
+                    <div class="self-top-img">
+                        <img src="img_seller/1489456083018.jpg" alt="">
+                        <div class="self-sect-product">
+                            <p>商家名称:阿里巴巴</p>
+                            <p>
+                                <i><img src="img_seller/sell.png" alt=""></i>
+                                <span>在售:10件</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="self-top-section">
+                        <p>商家资质：<i><img src="img_seller/gold.png" alt=""></i></p>
+                        <p>
+                            <i><img src="img_seller/time.png" alt=""></i>
+                            <span>注册时间:2008-8-10</span>
+                        </p>
+                    </div>
+                    <div class="self-top-set">
+                        <button>设置</button>
+                    </div>
+                </div> 
+                <div class="self-sect-right-middle">
+                    <div class="self-middle-left">
+                        <span><i><img src="img_seller/menu_logo_1.png" alt=""></i>商品管理</span>
+                        <div class="self-middle-left-main">
+                            <ul>
+                                <li><img src="img_seller/center_menu-1.png" alt=""><p>发布商品</p></li>
+                                <li><img src="img_seller/center_menu-2.png" alt=""><p>已上架商品</p></li>
+                                <li><img src="img_seller/center_menu-3.png" alt=""><p>订单中心</p></li>
+                                <li><img src="img_seller/center_menu-4.png" alt=""><p>带上家商铺</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="self-middle-right">
+                        <span><i><img src="img_seller/menu_logo_2.png" alt=""></i>资金管理</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+            <div class="foot-bottom">
+                    <div>
+                        <p>版权所有归：</p>
+                        <p>为信息产业科技公司</p>
+                        <p>技术支持</p>
+                        <p>微科技有限公司</p>
+        
+                    </div>
+                </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.tmpl.js"></script>
+    <script type="text/x-jquery-tmpl" id = "t1">
+        <div class="self-middle-right-main">
+                <p>
+                    <span>余额: <i>¥${balance}</i> <i><img src="img_seller/eye.png" alt=""></i></span>
+                    <span>提现</span>
+                </p>
+                <p>
+                    <span>交易额: <i>¥${market}</i> <i><img src="img_seller/eye.png" alt=""></i></span>
+                    <span>交易记录</span>
+                </p>
+                <hr>
+                <p>
+                    <span>已到账: <i>¥${receipted}</i> <i><img src="img_seller/eye.png" alt=""></i></span>
+                    <span>交易记录</span>
+                </p>
+                <p>
+                        <span>未到账: <i>¥${unreceipted}</i> <i><img src="img_seller/eye.png" alt=""></i></span>
+                        <span>交易记录</span>
+                </p>
+            </div>
+    </script>
+    <script>
+        var fund=fund;
+        $("#t1").tmpl(fund).appendTo(".self-middle-right")
+
+    </script>
+</body>
+</html>

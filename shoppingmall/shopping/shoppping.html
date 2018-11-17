@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/shop.css"></link>
+    <style>
+    .spanclass{
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+<header class="index-head">
+    <div class="index-head-main">
+        <div class="index-head-left">
+            <ul>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">我的商品</a></li>
+            </ul>
+        </div>
+        <div class="index-head-right">
+            <ul>
+                <li>用户:</li>
+                <li><a href="#">你好,登录</a></li>
+                <li><a href="">用户注册</a></li>
+                <li><a href="">卖家个人中心</a></li>
+                <li><a href="">买家个人中心</a></li>
+                <li><a href="">我的订单</a></li>
+                <li><a href="">购物车(2)</a></li>
+                <li><a href="">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<nav >
+    <div class="index-nav-main">
+        <div class="index-nav-logo">
+            <h1>中小微企业云服务平台</h1>
+        </div>
+        <div class="index-nav-right">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用超市</a></li>
+                <li><a href="">云资源服务</a></li>
+                <li><a href="">电子商务服务</a></li>
+                <li><a href="">政企服务</a></li>
+                <li><a href="">解决方案</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section >
+    <div class="secShop-main">
+        <!--<div class="secShop-top">-->
+            <!--<div>-->
+                <!--<img src="img/1496210830044.jpg" id="picture">-->
+            <!--</div>-->
+            <!--<div class="secShop-content">-->
+                <!--<h3>小米手机</h3>-->
+                <!--<div>-->
+                    <!--<label><a>产品介绍:</a></label>-->
+                    <!--<span class="big">性价比之王</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<label><a>库存:</a></label>-->
+                    <!--<span>100</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<label><a>资源:</a></label>-->
+                    <!--<span>￥</span>-->
+                    <!--<input type="text" value="0.00">-->
+                <!--</div>-->
+                <!--<div class="frame">-->
+                    <!--<label><a>颜色:</a></label>-->
+                    <!--<span>黑色</span>-->
+                    <!--<span>白色</span>-->
+                    <!--<span>草木绿</span>-->
+                <!--</div>-->
+                <!--<div class="frame">-->
+                    <!--<label><a>内存:</a></label>-->
+                    <!--<span>2G内存</span>-->
+                    <!--<span>4G内存</span>-->
+                    <!--<span>8G内存</span>-->
+                <!--</div>-->
+                <!--<div class="frame">-->
+                    <!--<label><a>存储:</a></label>-->
+                    <!--<span>32G</span>-->
+                    <!--<span>64G</span>-->
+                    <!--<span>1288G</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<label><a>购买数量:</a></label>-->
+                    <!--<input type="number" />-->
+                    <!--<input type="button" value="-"/>-->
+                    <!--<input type="button" value="+"/>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<input type="button" value="立即购买"/>-->
+                    <!--<input type="button" value="加入购物车"/>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="secShop-bottom">
+        <img src="img/1489559198459.jpg" alt="">
+    </div>
+</section>
+
+<footer>
+    <div class="foot-main">
+
+        <div class="foot-main-top">
+            <ul>
+                <li><h3>关于我们</h3></li>
+                <li><a>官方微博</a></li>
+                <li><a>官方微信</a></li>
+                <li><a>平台介绍</a></li>
+            </ul>
+            <ul>
+                <li><h3>支付方式</h3></li>
+                <li><a>微信支付</a></li>
+                <li><a>支付宝</a></li>
+                <li><a>翼支付</a></li>
+            </ul>
+            <ul>
+                <li><h3>商务合作</h3></li>
+                <li><a>合作机会</a></li>
+
+            </ul>
+            <ul>
+                <li><h3>服务与支持</h3></li>
+                <li><a>使用帮助</a></li>
+                <li><a>故障申报</a></li>
+
+            </ul>
+            <ul>
+                <li><h3>友情链接</h3></li>
+                <li><a>阿里云服务</a></li>
+                <li><a>天翼云</a></li>
+                <li><a>客服官网</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="foot-bottom">
+        <div>
+            <p>版权所有归：</p>
+            <p>为信息产业科技公司</p>
+            <p>技术支持</p>
+            <p>微科技有限公司</p>
+
+        </div>
+    </div>
+
+</footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/img.js"></script>
+<script src="js/shopping.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.js" ></script>
+<script type="text/x-jquery-tmpl" id = "t1">
+            <div class="secShop-top">
+            <div>
+                <img src="${src}" id="picture">
+            </div>
+            <div class="secShop-content">
+                <h3>${name}</h3>
+                <div>
+                    <label><a>产品介绍:</a></label>
+                    <span class="big">${special}</span>
+                </div>
+                <div>
+                    <label><a>库存:</a></label>
+                    <span class="kucun"></span>
+                </div>
+                <div>
+                    <label><a>资源:</a></label>
+                    <span>￥</span>
+                    <input type="text" name="money">
+                </div>
+                {{each(i,e) phone}}
+                    <div class="frame">
+                    <label><a>${title}:</a></label>
+                    {{each(i,e) special}}
+                          <span >${titlespecial}</span>
+                    {{/each}}
+                    </div>
+                {{/each}}
+                <div class="number">
+                    <label><a>购买数量:</a></label>
+                    <input type="text" value="0" id="num"/>
+                    <input type="button" value="-" class="numsub"/>
+                    <input type="button" value="+" class="numadd"/>
+                </div>
+                <div>
+                    <input type="button" value="立即购买"/>
+                    <input type="button" value="加入购物车"/>
+                </div>
+
+            </div>
+        </div>
+	</script>
+<script>
+    $("#t1").tmpl(shopping).appendTo(".secShop-main");
+    /*点的框变色*/
+    var $spanList=$("span")
+    $spanList.click(function(){
+        if($(this).attr("class")){
+            $(this).removeClass()
+        }else{
+            $(this).addClass("spanclass");
+            $(this).siblings("span").removeClass("spanclass");
+        }
+    })
+    /*当买家选择样式的时候把库存价格放入界面*/
+    $("input[type=button]").click(function(){
+        
+        var $spanChecks=$(".spanclass");
+        var text="";
+        for(var i=0;i<$spanChecks.length;i++){
+            text+=$spanChecks[i].innerHTML;
+        }
+        var flag=0;
+        var data=shopping;
+        var sell=data[0].commodity
+        var store=document.querySelector(".kucun")
+        var input=document.querySelector("input[name=money]")
+        $.each(sell, function(j, item){
+             if(text==item.title){
+                store.innerHTML=item.inventory;
+                input.value=item.value;
+                flag=1;
+            }
+        })
+        if(flag==0){
+            store.innerHTML='抱歉没了'
+            input.value=0;
+        }
+
+    })
+
+    $(".numadd").click(function(){
+        var kucun=$(".kucun").text()*1;
+        var n=num.value;
+        if(n<kucun){
+            num.value=++n;
+        }else{
+            num.value=kucun;
+        }
+    })
+    $(".numsub").click(function(){
+        var n=num.value;
+        if(n>1)
+            num.value=--n;
+        else
+            num.value=1;
+    })
+
+</script>
+</body>
+</html>

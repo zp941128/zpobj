@@ -1,0 +1,36 @@
+.secpro{
+    height: 500px;
+    width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+}
+.pro-sect-left{
+    width: 325px;
+    height: 300px;
+    float: left;
+}
+.pro-sect-left img{
+    margin-left: 40px;
+}
+.pro-sect-left p{
+    text-align: left;
+}
+.pro-sect-right,.secpro-ul li{
+    float: left;
+}
+.secpro-ul{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.secpro-ul li{
+    width: 180px;
+    height: 60px;
+    margin-left: 30px;
+    border: 1px solid #cccccc;
+}
+.secpro-ul li img{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    margin-top: 5px;
+}

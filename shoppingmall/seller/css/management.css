@@ -1,0 +1,14 @@
+.self-sect-right{
+    margin:30px;
+}
+.manage-sect-top{
+    width: 750px;
+    border-bottom: 2px solid #ccc;
+}
+.manage-sect-top p{
+    text-align: center;
+    color: rgb(236, 73, 44);
+    padding-bottom: 10px;
+    width: 150px;
+    border-bottom: 3px solid rgb(236, 73, 44);
+}

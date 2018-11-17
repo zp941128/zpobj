@@ -1,0 +1,15 @@
+section{
+    width: 1200px;
+    border: 1px solid red;
+    height:1200px;
+    margin: 0 auto;
+}
+.release-first-top{
+    height: 80px;
+    background: #ccc;
+    line-height: 80px;
+
+}
+.release-first-top p{
+    margin-left: 30px;
+}
