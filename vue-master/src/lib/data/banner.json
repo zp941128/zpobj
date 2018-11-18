@@ -1,0 +1,6 @@
+
+[
+        {"img":"http://localhost:3000/src/images/bannerImg/banner1.png"},
+        {"img":"http://localhost:3000/src/images/bannerImg/banner2.png"},
+        {"img":"http://localhost:3000/src/images/bannerImg/banner3.png"}
+    ]
