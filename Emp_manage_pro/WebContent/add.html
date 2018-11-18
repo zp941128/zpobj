@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>新增页面</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.big_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.box {
+	width: 900px;
+	height: 650px;
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 10px;
+}
+
+.box h2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/*width: px;*/
+	font-size: 45px;
+	text-align: center;
+}
+
+form {
+	position: relative;
+}
+
+.box div{
+	margin-bottom: 5px;
+}
+.box div label:not(.sex){
+	display: inline-block;
+	width: 120px;
+	height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.box .name>input, .box .phone>input, .box .address>input, .box .info>textarea
+	{
+	display: inline-block;
+	width: 700px;
+	height: 65px;
+	border-radius: 8px;
+}
+.box .age>input {
+	display: inline-block;
+	width: 200px;
+	height: 65px;
+	border-radius: 8px;
+}
+.box .gender{
+	padding-top: 10px;
+}
+.box .gender .sex{
+    display: inline-block;
+	width: 80px;
+	height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.box .gender>input {
+	display: inline-block;
+	width:20px;
+	height: 30px;
+	
+   
+}
+.box .position select {
+	display: inline-block;
+	height: 65px;
+	font-size: 20px;
+	padding-left: 10px;
+	border-radius: 8px;
+}
+.box .cancle {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+}
+
+.box .gender{
+	position: absolute;
+	top: 70px;
+	left: 350px;
+}
+
+.box .position {
+	position: absolute;
+	top: 80px;
+	left:560px;
+}
+.box div .sex {
+	display: inline-block;
+	height: 65px;
+	line-height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.save input,.btn{
+	width: 400px;
+	height: 65px;
+	font-size: 30px;
+	border-radius: 8px;
+}
+.id input[type="text"] {
+	width: 250px;
+	height:30px;
+	text-align: center;
+	font-weight: bolder;
+	letter-spacing: 10px;
+	
+}
+.box input{
+     outline: none;
+}
+span{
+position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+	<div class="big_box">
+		<div class="box">
+			<h2>添加新用户</h2>
+			<form action="employeeServlet?method=add" method="post">
+				<div class="name">
+					<label>用户名:</label> <input type="text" name="name" class="required"/> 
+				</div>
+				<div class="age" >
+					<label>年龄:</label> <input type="number" name="age" class="required"> 
+				</div>
+				<div class="gender">
+					<label class="sex">性别:</label> <input type="radio" name="gender"
+						value="1">男 <input type="radio" name="gender" value="0">女
+				</div>
+				<div class="phone" class="required">
+					<label>电话号码:</label> <input type="text" name="phone" class="required" id="telephone">
+				</div>
+				<div class="position">
+					<label class="pst">职位:</label> <select name="positionId">
+						<!-- <option value="1001">java开发</option>
+						<option value="1002">web开发</option>
+						<option value="1003">java测试</option>
+						<option value="1004">ui设计</option>
+						<option value="1005">大数据开发</option> -->
+					</select>
+				</div>
+				<div class="address" >
+					<label>地址:</label> <input type="text" name="address" class="required">
+				</div>
+				<div class="info">
+					<label>详细信息:</label>
+					<textarea rows="5" cols="100" name="info"></textarea>
+				</div>
+				<div class="save">
+					<input type="submit" name="save" value="提交">
+
+				</div>
+				<div class="cancle">
+					<input type="button" name="cancle" value="取消">
+				</div>
+				<!-- <span>页面错误</span>-->
+			</form>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		  $(function(){
+			  $.ajax({
+					type:"post",
+					url:"positionServlet?method=findAll",
+					success:function(data){
+						 console.log(data)
+						 var $select = $(".position select")
+						 var positions=JSON.parse(data)
+						 for(var i=0;i<positions.length;i++){
+							 var $option = $("<option>", {
+									text: positions[i].name,
+									value:positions[i].id
+								})
+							$select.append($option)	
+						 } 
+						 
+					},
+					error:function(){
+						alert("没有")
+					}
+				})
+			 /*  $("from :input.required").each(function(){
+					  
+					  var $required=$("<strong class='high'>*</strong>");
+					  $(this).parent().append($required);
+			  })	 */
+			  $("form :input.required").blur(function(){
+                	  var $parent=$(this).parent();
+                	//验证空
+                	   $parent.find(".msg").remove();
+                	  var $null=$(this).val();
+  				      if($null.length==" "){
+  				          $parent.append("<span class='msg'>账号不可能为空</span>");
+  					      return false;
+  				      }
+  				      //验证电话号码
+  				    if($(this).is("#telephone")){
+  				    	 var  tel=$("#telephone").val();
+  				    	 console.log(tel)
+  				    	 var telephone=/^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$/; 
+  				      if(!telephone.test(tel)){
+  				        	$("#telephone").append("<span class='msg'>电话号码不可能为空</span>");
+  				         }
+  				       
+  				    }
+              })
+				
+				
+				
+			  $("form").submit(function(){
+				  
+				  
+				  
+				
+              
+				/*  var $name=$(".name").val();
+		            console.log($name)
+				 if($name.length==" "){
+					 $(".name").append("<span>账号不可能为空</span>");
+					 return false;
+				 }
+				 else{
+					 $(".name").append("<img src='img/right.png'/>"); 
+				 } */
+				
+		            /*  var $age=$(".age").val();
+				 if($age.length<=0||$age<70){
+					 $(".age").append("<span>年龄不能为空,请输入合法年龄</span>");
+					
+					 return false;
+				 }else{
+					
+				 } */
+				/*  var $gender=$(".gender").val();
+				 if($age==null){
+					 $("#error2").html("年龄不能为空");
+					 return false;
+				 }
+				 var regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$"; */ 
+			     
+		   
+		        }) 
+			   
+		  })
+		  
+
+		
+		 
+		
+		
+		</script>
+
+
+
+
+</body>
+
+</html>

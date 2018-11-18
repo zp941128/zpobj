@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <button id="addEmp">添加员工</button>
+   <button id="psdList">职位列表</button>
+   <table border="1" cellspacing="" cellpadding="">
+			<thead>
+				<tr>
+					<th>员工编号</th>
+					<th>员工姓名</th>
+					<th>员工年龄</th>
+					<th>员工性别</th>
+					<th>员工电话</th>
+					<th>员工地址</th>
+					<th>员工职位</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript"  src="js/jquery.tmpl.js"></script>
+		<script type="text/jquery.tmpl.js" id="t1">
+         {{each(i,e) data}}
+                <tr>
+					<td>${i+1}</td>
+					<td>${name}</td>
+					<td>${age}</td>
+					<td>
+                       {{if gender=="0"}}女
+                       {{else}} 男
+                       {{/if}}
+  
+                    </td>
+					<td>${phone}</td>
+					<td>${address}</td>
+					<td>${positionName}</td>
+					<td><a href="employeeServlet?method=remove&id=${id}">删除</a>
+                        <a href="modify.html?id=${id}">修改</a>
+                    </td>
+				</tr>
+          {{/each}}
+
+		</script>
+		<script type="text/javascript">
+			
+			$(function() {
+				var url=window.location.search;
+				if(url.indexOf("?")!=-1) 
+				{ 
+				   var str = url.substr(1) 
+				    strs = str.split("&"); 
+				    var key=new Array(strs.length);
+				    var value=new Array(strs.length);
+				    for(i=0;i<strs.length;i++) 
+				    { 
+				     key[i]=strs[i].split("=")[0]
+				     value[i]=unescape(strs[i].split("=")[1]); 
+				   
+				   } 
+				} 
+				if(value[0]==1000001){
+					$("#psdList").show();
+				}else{
+					$("#psdList").hide();
+				} 
+				
+				$.ajax({
+					//请求类型
+					type: "get",
+					url: "employeeServlet?method=findAll",
+					async: false,
+					success: function(data) {
+                       console.log(data)
+						var $tb = $("tbody")
+						var employees=JSON.parse(data)
+						
+						$("#t1").tmpl({data:employees}).appendTo("tbody");
+					},
+					error: function() {
+						alert("失败")
+					}
+				})
+				
+				$("#addEmp").click(function(){
+					
+					 location.href="add.html"
+				})
+				$("#psdList").click(function(){
+					 location.href="position.html"
+				})
+              
+			})
+		</script>
+		
+</body>
+</html>

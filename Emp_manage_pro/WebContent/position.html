@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+      
+   <table border="" cellspacing="" cellpadding="">
+           <tr>
+           <th>职位</th>
+           <th>员工</th>
+           <th>操作</th>
+           </tr>
+       </table>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+		<script type="text/template" id="t1">
+        
+			 {{if empname.length<1}} 
+				<tr>
+					<td>${name}</td>
+					<td id="no"></td>
+					<td><button class="del">delete</button></td>
+				</tr>
+				{{else empname.length>=1}}
+				<tr>
+					<td rowspan="${empname.length}">${name}</td>					
+					<td>${empname[0].name}</td>					
+					<td rowspan="${empname.length}"><button >delete</button></td>
+				</tr>
+					{{each(i) empname}} 
+					{{if i>0}}
+				<tr>
+						<td>${empname[i].name}</td>
+				</tr>
+					{{/if}}
+					{{/each}} 				
+			{{/if}}
+
+       	     
+		</script>
+		<script type="text/javascript">
+		     $(function(){
+		    	 
+		    	 $.ajax({
+						//请求类型
+						type: "get",
+						url: "positionServlet?method=findPosition",
+						async: false,
+						success: function(data) {
+	                       console.log(data)
+						   
+						 var employees=JSON.parse(data)
+							console.log(employees)
+							$("#t1").tmpl(employees).appendTo("table");
+						},
+						error: function() {
+							alert("失败")
+						}
+					})
+					//删除
+				$("#no").next("td").find(".del").click(function(){
+					$(".del").parents("tr").hide();
+				})
+					
+					
+		     
+		     })
+		     
+		
+		
+		</script>
+     
+</body>
+</html>

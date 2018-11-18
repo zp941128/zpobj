@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>修改页面</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.big_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.box {
+	width: 900px;
+	height: 650px;
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 10px;
+}
+
+.box h2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/*width: px;*/
+	font-size: 45px;
+	text-align: center;
+}
+
+form {
+	position: relative;
+}
+
+.box div{
+	margin-bottom: 5px;
+}
+.box div label:not(.sex){
+	display: inline-block;
+	width: 120px;
+	height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.box .name>input, .box .phone>input, .box .address>input, .box .info>textarea
+	{
+	display: inline-block;
+	width: 700px;
+	height: 65px;
+	border-radius: 8px;
+}
+.box .age>input {
+	display: inline-block;
+	width: 200px;
+	height: 65px;
+	border-radius: 8px;
+}
+.box .gender{
+	padding-top: 10px;
+}
+.box .gender .sex{
+    display: inline-block;
+	width: 80px;
+	height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.box .gender>input {
+	display: inline-block;
+	width:20px;
+	height: 30px;
+	
+   
+}
+.box .position select {
+	display: inline-block;
+	height: 65px;
+	font-size: 20px;
+	padding-left: 10px;
+	border-radius: 8px;
+}
+.box .cancle {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+}
+
+.box .gender{
+	position: absolute;
+	top: 140px;
+	left: 350px;
+}
+
+.box .position {
+	position: absolute;
+	top: 150px;
+	left:560px;
+}
+.box div .sex {
+	display: inline-block;
+	height: 65px;
+	line-height: 65px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+	color: #666666;
+}
+.save input,.btn{
+	width: 400px;
+	height: 65px;
+	font-size: 30px;
+	border-radius: 8px;
+}
+.id input[type="text"] {
+	width: 250px;
+	height:30px;
+	text-align: center;
+	font-weight: bolder;
+	letter-spacing: 10px;
+	
+}
+</style>
+</head>
+
+<body>
+
+	<div class="big_box">
+		<div class="box">
+			<h2>修改用户</h2>
+			<form action="employeeServlet?method=modify" method="post">
+				<div class="id">
+					<label>ID:</label> <input type="text" name="id" readonly="readonly">
+				</div>
+				<div class="name">
+					<label>用户名:</label> <input type="text" name="name">
+				</div>
+				<div class="age">
+					<label>年龄:</label> <input type="number" name="age">
+				</div>
+				<div class="gender">
+					<label class="sex">性别:</label> <input type="radio" name="gender"
+						value="1">男 <input type="radio" name="gender" value="0">女
+				</div>
+				<div class="phone">
+					<label>电话号码:</label> <input type="text" name="phone">
+				</div>
+				<div class="position">
+					<label class="pst">职位:</label> <select name="positionId">
+						<!-- <option value="1001">java开发</option>
+						<option value="1002">web开发</option>
+						<option value="1003">java测试</option>
+						<option value="1004">ui设计</option>
+						<option value="1005">大数据开发</option> -->
+					</select>
+				</div>
+				<div class="address">
+					<label>地址:</label> <input type="text" name="address">
+				</div>
+				<div class="info">
+					<label>详细信息:</label>
+					<textarea rows="5" cols="100" name="info"></textarea>
+				</div>
+				<div class="save">
+					<button class="btn">提交</button>
+					<div class="cancle">
+						<input type="button" name="cancle" value="取消">
+					</div>
+					<!-- <span>页面错误</span>-->
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//职位活起来
+			 $.ajax({
+				type:"post",
+				url:"positionServlet?method=findAll",
+				success:function(data){
+					 console.log(data)
+					 var $select = $(".position select")
+					 var positions=JSON.parse(data)
+					 for(var i=0;i<positions.length;i++){
+						 var $option = $("<option>", {
+								text: positions[i].name,
+								value:positions[i].id
+							})
+						$select.append($option)	
+					 } 
+					 
+				}, 
+				error:function(){
+					alert("没有")
+				}
+			})
+			//回填
+			var url=window.location.search;
+			if(url.indexOf("?")!=-1) 
+			{ 
+			   var str = url.substr(1) 
+			    strs = str.split("&"); 
+			    var key=new Array(strs.length);
+			    var value=new Array(strs.length);
+			    for(i=0;i<strs.length;i++) 
+			    { 
+			     key[i]=strs[i].split("=")[0]
+			     value[i]=unescape(strs[i].split("=")[1]); 
+			    /* alert(key[i]+"="+value[i]); */
+			   } 
+			} 
+			console.log(value[0])
+			$.ajax({
+				type: "post",
+				url: "employeeServlet?method=findOneById&id="+value[0],
+				async: true,
+				success: function(data) {
+					var str=JSON.parse(data)
+					console.log(str.name)
+					$(".id input").val(str.id)
+					$(".name input").val(str.name)
+					$(".age input").val(str.age)
+					$(":radio[value="+str.gender+"]").prop("checked",true)						
+					$(".address input").val(str.address)
+					$(".phone input").val(str.phone)
+					$("select").val(str.positionId)
+					$(".info textarea").val(str.info)
+				},
+				error: function() {
+					document.write("垃圾路径错误渣渣")
+				}
+			});	
+		})
+
+		
+		  
+			  
+			  
+			  
+	
+		</script>
+
+
+
+</body>
+
+</html>
